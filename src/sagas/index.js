@@ -65,7 +65,7 @@ export function* fetchAllUserInfo(action) {
 
             let userId = action[i].userId;
 
-            if (arrAllUserInfoId.indexOf(userId) < 0) {
+            if (!arrAllUserInfoId.includes(userId)) {
                 let userInfo = yield fetch(`https://jsonplaceholder.typicode.com/users?id=${userId}`);
                 userInfo = yield userInfo.json();
                 yield arrAllUserInfo.push(...userInfo);
