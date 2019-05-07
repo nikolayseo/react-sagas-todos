@@ -33,7 +33,7 @@ export class Tasks extends Component {
                 <div className="container">
                     <h2>Все задачи</h2>
                     {allUserInfo.length && todos.length ?
-                        <ListTodos allUserInfo={allUserInfo} userTodos={todos}/> : <h5>Loading...</h5>}
+                        <ListTodos allUserInfo={allUserInfo} userTodos={todos}/> : <h5>Загрузка...</h5>}
                 </div>
             </div>
         );

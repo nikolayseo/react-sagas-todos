@@ -60,7 +60,8 @@ export class Profile extends Component {
                             {this.state.editUserInfo ? <EditUserInfo userInfo={this.props.userInfo}/> : null}
                         </div>
                         <div className="col-md-8">
-                            {this.props.userTodos ? <ListTodos username={name} userTodos={this.props.userTodos}/> : null}
+                            {this.props.userTodos ? <ListTodos username={name} userTodos={this.props.userTodos}/> :
+                                <h5>Загрузка...</h5>}
                         </div>
                     </div>
                 </div>
