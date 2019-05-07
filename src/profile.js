@@ -9,8 +9,8 @@ import {fetchUserTodos, fetchUserInfo, editUserInfo} from "./sagas";
 import {getIn, set, setIn} from "immutable";
 
 const initialState = {
-    userTodos: getIn(window.__DATA__, ['userTodos'], []),
-    userInfo: getIn(window.__DATA__, ['userInfo'], {})
+    userTodos: getIn(window.__DATA__, ['todos'], []),
+    userInfo: getIn(window.__DATA__, ['user'], {})
 };
 
 const appReducer = (state = initialState, action) => {
@@ -20,7 +20,7 @@ const appReducer = (state = initialState, action) => {
         case 'FETCH_USER_INFO_SUCCESS':
             return set(state, 'userInfo', action.payload.userInfo);
         case 'EDIT_USER_INFO_SUCCESS':
-            return setIn(state, ['userInfo'], action.payload.userInfo);
+            return set(state, ['userInfo'], action.payload.userInfo);
         default:
             return state;
     }

@@ -60,7 +60,7 @@ export class Profile extends Component {
                             {this.state.editUserInfo ? <EditUserInfo userInfo={this.props.userInfo}/> : null}
                         </div>
                         <div className="col-md-8">
-                            <ListTodos username={name} userTodos={this.props.userTodos}/>
+                            {this.props.userTodos ? <ListTodos username={name} userTodos={this.props.userTodos}/> : null}
                         </div>
                     </div>
                 </div>

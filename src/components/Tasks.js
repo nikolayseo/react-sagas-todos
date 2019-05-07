@@ -12,11 +12,11 @@ export class Tasks extends Component {
 
     componentDidMount() {
 
-        if (!this.props.todos) {
+        if (!this.props.todos.length) {
             this.props.fetchTodos();
         }
 
-        if (!this.props.userInfo) {
+        if (!this.props.userInfo.id) {
             this.props.fetchUserInfo();
         }
 
@@ -25,14 +25,15 @@ export class Tasks extends Component {
     render() {
 
         let {allUserInfo, todos} = this.props;
+        let {userInfo} = this.props;
 
         return (
             <div>
-                <Nav username={name}/>
+                <Nav username={userInfo.name}/>
                 <div className="container">
                     <h2>Все задачи</h2>
-                    {allUserInfo && todos ?
-                        <ListTodos allUserInfo={allUserInfo} userTodos={todos}/> : null}
+                    {allUserInfo.length && todos.length ?
+                        <ListTodos allUserInfo={allUserInfo} userTodos={todos}/> : <h5>Loading...</h5>}
                 </div>
             </div>
         );

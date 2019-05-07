@@ -9,9 +9,9 @@ import {fetchTodos, fetchUserInfo} from "./sagas";
 import {getIn, set} from "immutable";
 
 const initialState = {
-    todos: getIn(window.__DATA__, ['todos'], null),
-    allUserInfo: getIn(window.__DATA__, ['allUserInfo'], null),
-    userInfo: getIn(window.__DATA__, ['userInfo'], null)
+    todos: getIn(window.__DATA__, ['todos'], []),
+    allUserInfo: getIn(window.__DATA__, ['allUserInfo'], []),
+    userInfo: getIn(window.__DATA__, ['user'], {})
 };
 
 const appReducer = (state = initialState, action) => {
